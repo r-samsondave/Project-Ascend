@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://n6v0syrptw3i"]
 
 [ext_resource type="Script" uid="uid://du710ykj6jgew" path="res://scenes/level_intro.gd" id="1_lg3y3"]
-[ext_resource type="Texture2D" uid="uid://dvcg6ceyc7sk" path="res://assets/sign_level/level_1_signn.png" id="2_st5du"]
 [ext_resource type="AudioStream" uid="uid://sm04qse0k2aj" path="res://assets/audio/heaven_ruins_intrlo.wav" id="3_ltek1"]
 
 [sub_resource type="Animation" id="Animation_lg3y3"]
@@ -63,7 +62,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_lg3y3")
 
-[node name="sign" type="TextureRect" parent="." unique_id=681387131]
+[node name="Sign" type="TextureRect" parent="." unique_id=926837154]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -72,7 +71,6 @@ offset_left = -342.0
 offset_right = 342.0
 offset_bottom = 365.0
 grow_horizontal = 2
-texture = ExtResource("2_st5du")
 
 [node name="IntroSound" type="AudioStreamPlayer2D" parent="." unique_id=1943054628]
 stream = ExtResource("3_ltek1")
@@ -84,7 +82,6 @@ one_shot = true
 autostart = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1304030193]
-root_node = NodePath("../sign")
 libraries/ = SubResource("AnimationLibrary_ltek1")
 
 [connection signal="timeout" from="HideTimer" to="." method="_on_hide_timer_timeout"]

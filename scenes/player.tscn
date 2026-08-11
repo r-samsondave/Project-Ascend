@@ -2,9 +2,12 @@
 
 [ext_resource type="Script" uid="uid://bde801i1qwoxb" path="res://scenes/player.gd" id="1_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://haxpjmi0fp0p" path="res://assets/characters/Player/Pink_Monster_Idle_4.png" id="2_dqkch"]
+[ext_resource type="AudioStream" uid="uid://bxpmypsr7ic1a" path="res://assets/audio/death_SE.mp3" id="2_fjrip"]
 [ext_resource type="Texture2D" uid="uid://dqq08vnjin66k" path="res://assets/characters/Player/Pink_Monster_Death_8.png" id="2_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://bcs731b3h1ewv" path="res://assets/characters/Player/Pink_Monster_Jump_8.png" id="3_dqkch"]
 [ext_resource type="Texture2D" uid="uid://mc1c8d4y7d74" path="res://assets/characters/Player/Pink_Monster_Walk_6.png" id="3_qlg0r"]
+[ext_resource type="AudioStream" uid="uid://cu4enaqwwtgl5" path="res://assets/audio/is_alive_SE.mp3" id="3_smehm"]
+[ext_resource type="AudioStream" uid="uid://b61wiewebhmcb" path="res://assets/audio/cute_jump.mp3" id="8_smehm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jej6c"]
 atlas = ExtResource("2_qlg0r")
@@ -213,10 +216,16 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ktb4s"]
 radius = 8.0
-height = 22.0
+height = 18.0
 
 [node name="Player" type="CharacterBody2D" unique_id=114417943]
 script = ExtResource("1_qhqgy")
+
+[node name="DeathSE" type="AudioStreamPlayer2D" parent="." unique_id=1222054489]
+stream = ExtResource("2_fjrip")
+
+[node name="RespawnSE" type="AudioStreamPlayer2D" parent="." unique_id=2142836177]
+stream = ExtResource("3_smehm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2136783504]
 position = Vector2(7, -6)
@@ -229,6 +238,11 @@ shape = SubResource("CapsuleShape2D_ktb4s")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1675183784]
 position = Vector2(6, -2)
-zoom = Vector2(2, 2)
+zoom = Vector2(2.5, 2.5)
 position_smoothing_enabled = true
-position_smoothing_speed = 10.0
+position_smoothing_speed = 15.0
+
+[node name="JumpSE" type="AudioStreamPlayer2D" parent="." unique_id=1772164433]
+stream = ExtResource("8_smehm")
+volume_db = -20.0
+autoplay = true

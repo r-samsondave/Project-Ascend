@@ -20,12 +20,13 @@ func die():
 
 	is_dead = true
 	velocity = Vector2.ZERO
-
+	$DeathSE.play()
 	animated_sprite.play("death")
 
 	await animated_sprite.animation_finished
 
 	position = spawn_position
+	$RespawnSE.play()
 	is_dead = false
 
 
@@ -39,7 +40,9 @@ func _physics_process(delta):
 
 	# Jump
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		$JumpSE.play()
 		velocity.y = JUMP_VELOCITY
+
 
 	# Movement
 	var direction = Input.get_axis("walk_left", "walk_right")
