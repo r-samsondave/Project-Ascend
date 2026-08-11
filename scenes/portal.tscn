@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://ct85qti2231d3"]
+
+[ext_resource type="Texture2D" uid="uid://cx6ll36ddu44e" path="res://assets/object/Portal/Dimensional_Portal.png" id="1_v0xau"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ffj6"]
+atlas = ExtResource("1_v0xau")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jr6l0"]
+atlas = ExtResource("1_v0xau")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4jfq"]
+atlas = ExtResource("1_v0xau")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyed0"]
+atlas = ExtResource("1_v0xau")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckw30"]
+atlas = ExtResource("1_v0xau")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4pvrx"]
+atlas = ExtResource("1_v0xau")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1jhxy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ffj6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jr6l0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4jfq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dyed0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckw30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4pvrx")
+}],
+"loop": 1,
+"name": &"portal",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ktb4s"]
+radius = 14.0
+height = 50.0
+
+[node name="Portal" type="Area2D" unique_id=1389205391]
+
+[node name="PortalSprite" type="AnimatedSprite2D" parent="." unique_id=1185288124]
+position = Vector2(656.5, 192.5)
+scale = Vector2(1.65625, 1.46875)
+sprite_frames = SubResource("SpriteFrames_1jhxy")
+animation = &"portal"
+autoplay = "portal"
+frame_progress = 0.7023117
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1267241168]
+position = Vector2(659, 193)
+shape = SubResource("CapsuleShape2D_ktb4s")
