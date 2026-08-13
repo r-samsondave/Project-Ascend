@@ -1,61 +1,11 @@
 [gd_scene format=3 uid="uid://dlbtqec6o5o17"]
 
-[ext_resource type="Texture2D" uid="uid://bsru1jfjngfe3" path="res://assets/environment/Tileset/world_tileset.png" id="1_ms375"]
-
-[sub_resource type="Animation" id="Animation_15mv3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_e3sih"]
-resource_name = "move_platform"
-length = 4.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(175, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_2y5yt"]
-_data = {
-&"RESET": SubResource("Animation_15mv3"),
-&"move_platform": SubResource("Animation_e3sih")
-}
-
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_5snd5"]
-a = Vector2(-22.25, -22.875)
-b = Vector2(24.75, -22.875)
+a = Vector2(-14.25, -22.875)
+b = Vector2(-7.25, -22.875)
 
 [node name="MovingPlatform" type="AnimatableBody2D" unique_id=1133293067]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=704903712]
-position = Vector2(992, 347)
-texture = ExtResource("1_ms375")
-region_enabled = true
-region_rect = Rect2(144.24678, 0.31877708, 50.190063, 12.921518)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1853044750]
-libraries/ = SubResource("AnimationLibrary_2y5yt")
-autoplay = &"move_platform"
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=654362588]
-position = Vector2(990.25, 365.875)
+position = Vector2(1000, 367)
 shape = SubResource("SegmentShape2D_5snd5")

@@ -3,7 +3,9 @@ extends CharacterBody2D
 const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 const GRAVITY = 1200.0
+const COYOTE_TIME = 0.15
 
+var coyote_timer = 0.0
 var spawn_position
 var is_dead = false
 
@@ -11,7 +13,11 @@ var is_dead = false
 
 
 func _ready():
-	spawn_position = position
+	spawn_position = global_position
+
+
+func set_checkpoint(new_position):
+	spawn_position = new_position
 
 
 func die():
@@ -25,12 +31,18 @@ func die():
 
 	await animated_sprite.animation_finished
 
-	position = spawn_position
+	global_position = spawn_position
 	$RespawnSE.play()
 	is_dead = false
 
 
 func _physics_process(delta):
+	# Coyote time
+	if is_on_floor():
+		coyote_timer = COYOTE_TIME
+	else:
+		coyote_timer -= delta
+	
 	if is_dead:
 		return
 
@@ -39,9 +51,10 @@ func _physics_process(delta):
 		velocity.y += GRAVITY * delta
 
 	# Jump
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("ui_accept") and coyote_timer > 0:
 		$JumpSE.play()
 		velocity.y = JUMP_VELOCITY
+		coyote_timer = 0
 
 
 	# Movement
@@ -63,5 +76,5 @@ func _physics_process(delta):
 	move_and_slide()
 
 	# Fell out of the level
-	if position.y > 1000:
+	if position.y > 900:
 		die()
