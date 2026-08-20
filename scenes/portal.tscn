@@ -72,4 +72,4 @@ frame_progress = 0.7023117
 position = Vector2(3, 3)
 shape = SubResource("CapsuleShape2D_ktb4s")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered" flags=3]

@@ -10,28 +10,30 @@ var spawn_position
 var is_dead = false
 
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var hud = $"../HUD"
 
 
 func _ready():
 	spawn_position = global_position
 
-
 func set_checkpoint(new_position):
 	spawn_position = new_position
-
 
 func die():
 	if is_dead:
 		return
 
 	is_dead = true
+	hud.lose_life()
 	velocity = Vector2.ZERO
+
 	$DeathSE.play()
 	animated_sprite.play("death")
 
 	await animated_sprite.animation_finished
 
 	global_position = spawn_position
+
 	$RespawnSE.play()
 	is_dead = false
 
@@ -42,7 +44,7 @@ func _physics_process(delta):
 		coyote_timer = COYOTE_TIME
 	else:
 		coyote_timer -= delta
-	
+
 	if is_dead:
 		return
 
@@ -51,11 +53,10 @@ func _physics_process(delta):
 		velocity.y += GRAVITY * delta
 
 	# Jump
-	if Input.is_action_just_pressed("ui_accept") and coyote_timer > 0:
+	if Input.is_action_just_pressed("space_jump") and coyote_timer > 0:
 		$JumpSE.play()
 		velocity.y = JUMP_VELOCITY
 		coyote_timer = 0
-
 
 	# Movement
 	var direction = Input.get_axis("walk_left", "walk_right")
@@ -64,7 +65,9 @@ func _physics_process(delta):
 	# Animation
 	if not is_on_floor():
 		animated_sprite.play("jump")
-		animated_sprite.flip_h = direction < 0
+
+		if direction != 0:
+			animated_sprite.flip_h = direction < 0
 
 	elif direction != 0:
 		animated_sprite.play("walk")
@@ -76,5 +79,5 @@ func _physics_process(delta):
 	move_and_slide()
 
 	# Fell out of the level
-	if position.y > 900:
+	if global_position.y > 600:
 		die()

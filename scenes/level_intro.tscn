@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://n6v0syrptw3i"]
 
-[ext_resource type="Script" uid="uid://du710ykj6jgew" path="res://scenes/level_intro.gd" id="1_lg3y3"]
+[ext_resource type="Script" uid="uid://du710ykj6jgew" path="res://scenes/level_intro.gd" id="1_7dprr"]
 [ext_resource type="AudioStream" uid="uid://sm04qse0k2aj" path="res://assets/audio/heaven_ruins_intrlo.wav" id="3_ltek1"]
 
 [sub_resource type="Animation" id="Animation_lg3y3"]
@@ -60,7 +60,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_lg3y3")
+script = ExtResource("1_7dprr")
 
 [node name="Sign" type="TextureRect" parent="." unique_id=926837154]
 layout_mode = 1

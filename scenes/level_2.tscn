@@ -1,240 +1,24 @@
 [gd_scene format=4 uid="uid://djk6o1c4q061o"]
 
-[ext_resource type="PackedScene" uid="uid://b412y625djhmd" path="res://scenes/player.tscn" id="1_eqxsl"]
+[ext_resource type="PackedScene" uid="uid://n6v0syrptw3i" path="res://scenes/level_intro.tscn" id="1_6cvei"]
 [ext_resource type="Texture2D" uid="uid://bx4nbwkjaeyei" path="res://assets/environment/Background/sand_dunes.png" id="2_b4j7a"]
+[ext_resource type="PackedScene" uid="uid://b412y625djhmd" path="res://scenes/player.tscn" id="3_que50"]
 [ext_resource type="PackedScene" uid="uid://c0imvjefr8s3g" path="res://scenes/terrain.tscn" id="3_wo48x"]
-[ext_resource type="PackedScene" uid="uid://bh18522u08kev" path="res://scenes/death_block.tscn" id="4_eqxsl"]
-[ext_resource type="PackedScene" uid="uid://n6v0syrptw3i" path="res://scenes/level_intro.tscn" id="5_b4j7a"]
-[ext_resource type="Texture2D" uid="uid://de012fiopblaj" path="res://assets/environment/Tileset/desert-ruins.png" id="6_que50"]
 [ext_resource type="Texture2D" uid="uid://j1oyg12ys6a6" path="res://assets/sign_level/level_2_sign.png" id="6_wo48x"]
-[ext_resource type="Texture2D" uid="uid://bsru1jfjngfe3" path="res://assets/environment/Tileset/world_tileset.png" id="7_hey2k"]
 [ext_resource type="AudioStream" uid="uid://bb57ntdgmogm3" path="res://assets/audio/level_2.mp3" id="7_y0kc7"]
 [ext_resource type="Texture2D" uid="uid://b5jd8e7h1s8c6" path="res://assets/characters/Player/Rock2.png" id="8_ne2mo"]
 [ext_resource type="PackedScene" uid="uid://ct85qti2231d3" path="res://scenes/portal.tscn" id="9_6cvei"]
+[ext_resource type="PackedScene" uid="uid://cwbxhafopjghr" path="res://scenes/hud.tscn" id="10_que50"]
 [ext_resource type="PackedScene" uid="uid://dxsl4n8yimrgr" path="res://scenes/check_point.tscn" id="12_172wr"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hey2k"]
-texture = ExtResource("6_que50")
-1:1/0 = 0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-2:1/0 = 0
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-3:1/0 = 0
-3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-4:1/0 = 0
-4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-5:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-6:4/0 = 0
-7:4/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-6:5/0 = 0
-7:5/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-3:6/0 = 0
-4:6/0 = 0
-5:6/0 = 0
-6:6/0 = 0
-7:6/0 = 0
-1:8/0 = 0
-2:8/0 = 0
-3:8/0 = 0
-4:8/0 = 0
-5:8/0 = 0
-6:8/0 = 0
-7:8/0 = 0
-1:9/0 = 0
-2:9/0 = 0
-3:9/0 = 0
-4:9/0 = 0
-5:9/0 = 0
-7:9/0 = 0
-1:10/0 = 0
-2:10/0 = 0
-3:10/0 = 0
-4:10/0 = 0
-5:10/0 = 0
-6:10/0 = 0
-7:10/0 = 0
-1:11/0 = 0
-2:11/0 = 0
-3:11/0 = 0
-4:11/0 = 0
-5:11/0 = 0
-1:12/0 = 0
-2:12/0 = 0
-3:12/0 = 0
-4:12/0 = 0
-5:12/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_172wr"]
-texture = ExtResource("7_hey2k")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
-9:0/0 = 0
-10:0/0 = 0
-11:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-8:1/0 = 0
-9:1/0 = 0
-10:1/0 = 0
-11:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-8:2/0 = 0
-9:2/0 = 0
-10:2/0 = 0
-11:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-8:3/0 = 0
-9:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-6:4/0 = 0
-7:4/0 = 0
-8:4/0 = 0
-9:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-6:5/0 = 0
-7:5/0 = 0
-8:5/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-3:6/0 = 0
-4:6/0 = 0
-5:6/0 = 0
-6:6/0 = 0
-7:6/0 = 0
-8:6/0 = 0
-0:7/0 = 0
-1:7/0 = 0
-3:7/0 = 0
-5:7/0 = 0
-6:7/0 = 0
-7:7/0 = 0
-8:7/0 = 0
-0:8/0 = 0
-1:8/0 = 0
-2:8/0 = 0
-3:8/0 = 0
-4:8/0 = 0
-5:8/0 = 0
-6:8/0 = 0
-7:8/0 = 0
-8:8/0 = 0
-0:9/0 = 0
-1:9/0 = 0
-2:9/0 = 0
-3:9/0 = 0
-4:9/0 = 0
-5:9/0 = 0
-6:9/0 = 0
-7:9/0 = 0
-0:10/0 = 0
-1:10/0 = 0
-2:10/0 = 0
-3:10/0 = 0
-4:10/0 = 0
-6:10/0 = 0
-0:11/0 = 0
-1:11/0 = 0
-2:11/0 = 0
-3:11/0 = 0
-4:11/0 = 0
-5:11/0 = 0
-0:12/0 = 0
-1:12/0 = 0
-2:12/0 = 0
-3:12/0 = 0
-4:12/0 = 0
-0:13/0 = 0
-1:13/0 = 0
-2:13/0 = 0
-3:13/0 = 0
-4:13/0 = 0
-5:13/0 = 0
-0:14/0 = 0
-1:14/0 = 0
-2:14/0 = 0
-3:14/0 = 0
-4:14/0 = 0
-0:15/0 = 0
-1:15/0 = 0
-2:15/0 = 0
-3:15/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_hhfj6"]
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_hey2k")
-sources/1 = SubResource("TileSetAtlasSource_172wr")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1jhxy"]
 size = Vector2(299.41757, 35.559967)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ktb4s"]
-size = Vector2(305.2884, 20)
+size = Vector2(635.0392, 153.12903)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h05r6"]
-size = Vector2(168.2998, 20)
+size = Vector2(299.41757, 151.35101)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_1jhxy"]
 a = Vector2(-891.8925, -383.1591)
@@ -242,6 +26,9 @@ b = Vector2(-888.95703, 63.11902)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5snd5"]
 size = Vector2(20, 270.2561)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ilmsr"]
+size = Vector2(297.81274, 124.57056)
 
 [sub_resource type="Animation" id="Animation_b4j7a"]
 length = 1.5
@@ -253,15 +40,27 @@ tracks/0/path = NodePath("DeathBlock:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0005059524, 0.73333335),
+"times": PackedFloat32Array(0, 0.0005059524, 0.6666667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(330, 397), Vector2(330, 397), Vector2(330, 495)]
+"values": [Vector2(330, 160), Vector2(330, 397), Vector2(330, 281.92)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DeathBlock2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(400, 200)]
 }
 
 [sub_resource type="Animation" id="Animation_eqxsl"]
 resource_name = "up_down"
-length = 2.0
+length = 1.8
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -270,16 +69,34 @@ tracks/0/path = NodePath("DeathBlock:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(330, 397), Vector2(330, 495)]
+"values": [Vector2(330, 200), Vector2(330, 285)]
+}
+
+[sub_resource type="Animation" id="Animation_172wr"]
+resource_name = "up_down_2"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DeathBlock2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.53333336),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(400, 200), Vector2(400, 285)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b4j7a"]
 _data = {
 &"RESET": SubResource("Animation_b4j7a"),
-&"up_down": SubResource("Animation_eqxsl")
+&"up_down": SubResource("Animation_eqxsl"),
+&"up_down_2": SubResource("Animation_172wr")
 }
 
 [sub_resource type="Animation" id="Animation_wo48x"]
@@ -295,6 +112,23 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(393, 397)]
+}
+
+[sub_resource type="Animation" id="Animation_fldb1"]
+resource_name = "uo_down_2"
+length = 1.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(400, 200), Vector2(400, 285)]
 }
 
 [sub_resource type="Animation" id="Animation_y0kc7"]
@@ -317,6 +151,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ne2mo"]
 _data = {
 &"RESET": SubResource("Animation_wo48x"),
+&"uo_down_2": SubResource("Animation_fldb1"),
 &"up_down": SubResource("Animation_y0kc7")
 }
 
@@ -352,10 +187,28 @@ tracks/0/keys = {
 "values": [Vector2(464, 417), Vector2(464, 495)]
 }
 
+[sub_resource type="Animation" id="Animation_g2hoc"]
+resource_name = "top_down_#"
+length = 1.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(470, 200), Vector2(470, 285)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_que50"]
 _data = {
 &"RESET": SubResource("Animation_ne2mo"),
-&"top_down": SubResource("Animation_6cvei")
+&"top_down": SubResource("Animation_6cvei"),
+&"top_down_#": SubResource("Animation_g2hoc")
 }
 
 [sub_resource type="Animation" id="Animation_hey2k"]
@@ -387,7 +240,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(175, 0)]
+"values": [Vector2(0, -215), Vector2(175, -215)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hey2k"]
@@ -399,12 +252,12 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6cvei"]
 size = Vector2(12, 11.25)
 
-[node name="Level_2_cosmos" type="Node2D" unique_id=796404681]
-position = Vector2(-8, -100)
+[node name="level_2" type="Node2D" unique_id=796404681]
+position = Vector2(464, 417)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1106679423]
 
-[node name="level_intro" parent="CanvasLayer" unique_id=537239394 instance=ExtResource("5_b4j7a")]
+[node name="level_intro" parent="CanvasLayer" unique_id=537239394 instance=ExtResource("1_6cvei")]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -413,65 +266,38 @@ offset_right = 20.0
 grow_horizontal = 2
 sign_texture = ExtResource("6_wo48x")
 
-[node name="Player" parent="." unique_id=114417943 instance=ExtResource("1_eqxsl")]
-position = Vector2(115, 658)
+[node name="Player" parent="." unique_id=114417943 instance=ExtResource("3_que50")]
+position = Vector2(2902, 515)
+
+[node name="Camera2D2" type="Camera2D" parent="Player" unique_id=1345036344]
+position = Vector2(6, -2)
+zoom = Vector2(2.7, 2.7)
+limit_left = 0
+limit_top = -150
+limit_right = 3095
+limit_bottom = 680
+position_smoothing_enabled = true
+position_smoothing_speed = 15.0
 
 [node name="Background" type="Sprite2D" parent="." unique_id=146729753]
 z_index = -10
-position = Vector2(753, 511)
-scale = Vector2(0.9019139, 1.0616366)
+position = Vector2(754, 300)
 texture = ExtResource("2_b4j7a")
-metadata/_edit_lock_ = true
 
-[node name="Background2" type="Sprite2D" parent="Background" unique_id=2094106294]
-position = Vector2(-1672, 0)
+[node name="Background3" type="Sprite2D" parent="Background" unique_id=1930779356]
+z_index = -9
+position = Vector2(1589.9999, 7.867813e-06)
+scale = Vector2(0.90191394, 0.99999994)
 texture = ExtResource("2_b4j7a")
-metadata/_edit_lock_ = true
-
-[node name="Background3" type="Sprite2D" parent="Background" unique_id=2015937202]
-position = Vector2(-1668.6737, 2084.915)
-rotation = 3.1415927
-scale = Vector2(1.0000001, 3.443287)
-texture = ExtResource("2_b4j7a")
-metadata/_edit_lock_ = true
-
-[node name="Background2" type="Sprite2D" parent="Background/Background3" unique_id=1608697328]
-position = Vector2(-1672, 0)
-texture = ExtResource("2_b4j7a")
-metadata/_edit_lock_ = true
-
-[node name="Background" type="Sprite2D" parent="Background" unique_id=1740017665]
-z_index = -10
-position = Vector2(2800.7107, -17.896894)
-scale = Vector2(0.9019139, 1.0616366)
-texture = ExtResource("2_b4j7a")
-metadata/_edit_lock_ = true
-
-[node name="Background2" type="Sprite2D" parent="Background/Background" unique_id=1930779356]
-position = Vector2(-1672, 0)
-texture = ExtResource("2_b4j7a")
-metadata/_edit_lock_ = true
-
-[node name="Background3" type="Sprite2D" parent="Background/Background" unique_id=581906654]
-position = Vector2(-1668.6737, 2084.915)
-rotation = 3.1415927
-scale = Vector2(1.0000001, 3.443287)
-texture = ExtResource("2_b4j7a")
-metadata/_edit_lock_ = true
-
-[node name="Background2" type="Sprite2D" parent="Background/Background/Background3" unique_id=662092576]
-position = Vector2(-1672, 0)
-texture = ExtResource("2_b4j7a")
-metadata/_edit_lock_ = true
+flip_h = true
 
 [node name="Terrain" parent="." unique_id=1845074917 instance=ExtResource("3_wo48x")]
-z_index = -10
-position = Vector2(314, 604)
-tile_map_data = PackedByteArray("AABOAAwAAAACAAEAAABSAAkAAAACAAEAAABWAAYAAAACAAEAAABbAAYAAAACAAEAAABgAAYAAAACAAEAAABlAAQAAAACAAEAAAAzAAMAAAACAAEAAAA0AAMAAAACAAEAAAB3AAUAAAACAAEAAABxAAQAAAACAAEAAAB5AAsAAAACAAEAAAAXAAcAAAAJAAYAAAAXAAgAAAAJAAYAAAAYAAUAAAAJAAYAAAASAAsAAAAJAAYAAAACAAUAAAACAAEAAAABAAUAAAACAAEAAAD+/wEAAAACAAEAAAD9/wEAAAACAAEAAAD7//7/AAACAAEAAAD6//7/AAACAAEAAAD///r/AAACAAEAAAD9//r/AAACAAEAAAAAAPr/AAACAAEAAAABAPr/AAACAAEAAAACAPr/AAACAAEAAAADAPr/AAACAAEAAAAEAPr/AAACAAEAAAAEAAkAAAACAAEAAAAFAAkAAAACAAEAAAABAAsAAAACAAEAAAACAAsAAAACAAEAAAAFAPr/AAACAAEAAAAGAPr/AAACAAEAAAAHAPr/AAACAAEAAAAIAPr/AAACAAEAAAAJAPr/AAACAAEAAAAKAPr/AAACAAEAAAALAPr/AAACAAEAAAAMAPr/AAACAAEAAAANAPr/AAACAAEAAAAQAP//AAACAAEAAAARAP//AAACAAEAAAATAP//AAACAAEAAAASAP//AAACAAEAAAAWAP3/AAACAAEAAAAaAPr/AAACAAEAAAAeAPj/AAACAAEAAAArAPj/AAACAAEAAAAsAPj/AAACAAEAAAAtAPj/AAACAAEAAABrAAMAAAACAAEAAAAvAP7/AAACAAEAAAAwAP7/AAACAAEAAAAxAP7/AAACAAEAAAD+//r/AAACAAEAAACIAA4AAQAFAAUAAACIAA0AAQAFAAQAAACIAAwAAQAFAAQAAACIAAsAAQAFAAQAAACIAAoAAQAFAAQAAACIAAkAAQAFAAQAAACIAAgAAQAFAAQAAACIAAcAAQAFAAQAAACIAAYAAQAFAAQAAACIAAUAAQAFAAQAAACIAAQAAQAFAAQAAACIAAMAAQAFAAQAAACIAAIAAQAFAAQAAACIAAEAAQAFAAQAAACIAAAAAQAFAAQAAACIAP//AQAFAAQAAACIAP7/AQAFAAQAAACIAP3/AQAFAAQAAACIAPz/AQAFAAQAAACIAPv/AQAFAAQAAACIAPr/AQAFAAQAAACIAPn/AQAFAAQAAACIAPj/AQAFAAQAAACIAPf/AQAFAAQAAACIAPb/AQAFAAQAAACIAPX/AQAFAAQAAACIAPT/AQAFAAQAAACIAPP/AQAFAAQAAACIAPL/AQAFAAQAAACIAPH/AQAFAAQAAACIAPD/AQAFAAQAAACIAO//AQAFAAQAAACIAO7/AQAFAAQAAACIAO3/AQAFAAQAAACIAOz/AQAFAAQAAACIAOv/AQAFAAQAAACIAOr/AQAFAAQAAABKAAwAAQAFAAQAAABKAAsAAQAFAAQAAABKAAoAAQAFAAQAAABKAAkAAQAFAAQAAABKAAgAAQAFAAQAAABKAAcAAQAFAAQAAABKAAYAAQAFAAQAAABKAAUAAQAFAAQAAABKAAQAAQAFAAQAAABKAAMAAQAFAAQAAABKAAIAAQAFAAQAAABKAAEAAQAFAAQAAABKAAAAAQAFAAQAAABKAP//AQAFAAQAAABKAP7/AQAFAAQAAABKAP3/AQAFAAQAAABKAPz/AQAFAAQAAABKAPv/AQAFAAMAAABKAA0AAQAFAAUAAADs/w0AAQAFAAQAAADs/wwAAQAFAAQAAADs/wsAAQAFAAQAAADs/woAAQAFAAQAAADs/wkAAQAFAAQAAADs/wgAAQAFAAQAAADs/wcAAQAFAAQAAADs/wYAAQAFAAQAAADs/wUAAQAFAAQAAADs/wQAAQAFAAQAAADs/wMAAQAFAAQAAADs/wIAAQAFAAQAAADs/wEAAQAFAAQAAADs/wAAAQAFAAQAAADs////AQAFAAQAAADs//7/AQAFAAQAAADs//3/AQAFAAQAAADs//z/AQAFAAQAAADs//v/AQAFAAQAAADs//r/AQAFAAQAAADs//n/AQAFAAQAAADs//j/AQAFAAQAAADs//f/AQAFAAQAAADs//b/AQAFAAQAAADs//X/AQAFAAQAAADs//T/AQAFAAQAAADs//P/AQAFAAMAAADs/w4AAQAFAAUAAACIAOn/AQAFAAMAAAA=")
-tile_set = SubResource("TileSet_hhfj6")
+z_index = 2
+position = Vector2(314, 390)
+tile_map_data = PackedByteArray("AAAzAAMAAQACAAAAAAA0AAMAAQACAAAAAAAXAAcAAAAJAAYAAAAXAAgAAAAJAAYAAAAYAAUAAAAJAAYAAAASAAsAAAAJAAYAAAACAAUAAQACAAAAAAABAAUAAQACAAAAAAD+/wEAAQACAAAAAAD9/wEAAQACAAAAAAD7//7/AQACAAAAAAD6//7/AQACAAAAAAD9//r/AQACAAAAAAAAAPr/AQACAAAAAAABAPr/AQACAAAAAAACAPr/AQACAAAAAAADAPr/AQACAAAAAAAEAPr/AQACAAAAAAABAAsAAQACAAAAAAACAAsAAQACAAAAAAAFAPr/AQACAAAAAAAGAPr/AQACAAAAAAAHAPr/AQACAAAAAAAIAPr/AQACAAAAAAAJAPr/AQACAAAAAAAKAPr/AQACAAAAAAALAPr/AQACAAAAAAAMAPr/AQACAAAAAAANAPr/AQACAAAAAAAQAP//AQACAAAAAAARAP//AQACAAAAAAATAP//AQACAAAAAAASAP//AQACAAAAAAAWAP3/AQACAAAAAAAaAPr/AQACAAAAAAAeAPj/AQACAAAAAAArAPj/AQACAAAAAAAsAPj/AQACAAAAAAAtAPj/AQACAAAAAAAvAP7/AQACAAAAAAAwAP7/AQACAAAAAAAxAP7/AQACAAAAAAAEAAkAAQACAAAAAAAFAAkAAQACAAAAAAD+//r/AQACAAAAAAD///r/AQACAAAAAABpAAoAAQACAAIAAABvAA4AAQACAAIAAAB1AAoAAQACAAIAAAB7AAYAAQACAAIAAACDAAYAAQACAAIAAACLAAYAAQACAAIAAACTAAsAAQACAAIAAAA=")
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=1580065024]
-position = Vector2(908.50006, 817)
+position = Vector2(908.5, 600)
 scale = Vector2(1.0219842, 1.1248591)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=1347056923]
@@ -479,11 +305,11 @@ position = Vector2(-738.2698, 33.78199)
 shape = SubResource("RectangleShape2D_1jhxy")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground" unique_id=1677889158]
-position = Vector2(439.83057, 18.669006)
+position = Vector2(650.695, 76.34357)
 shape = SubResource("RectangleShape2D_ktb4s")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground" unique_id=878975405]
-position = Vector2(1467.2438, 24.00303)
+position = Vector2(1990.7351, 74.56555)
 shape = SubResource("RectangleShape2D_h05r6")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Ground" unique_id=636530345]
@@ -491,40 +317,35 @@ position = Vector2(9.295583, -3.556001)
 shape = SubResource("SegmentShape2D_1jhxy")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Ground" unique_id=1303771888]
-position = Vector2(1556.2863, -109.34704)
+position = Vector2(2149.2505, -124.46004)
 shape = SubResource("RectangleShape2D_5snd5")
 
-[node name="DeathBlock" parent="." unique_id=2088315771 instance=ExtResource("4_eqxsl")]
-position = Vector2(330, 397)
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Ground" unique_id=1563625505]
+position = Vector2(-736.4889, 114.62579)
+shape = SubResource("RectangleShape2D_ilmsr")
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="DeathBlock" unique_id=1910897815]
+[node name="DeathBlock#AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=1910897815]
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_b4j7a")
-autoplay = &"RESET"
-
-[node name="DeathBlock2" parent="." unique_id=869614194 instance=ExtResource("4_eqxsl")]
-position = Vector2(393, 397)
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="DeathBlock2" unique_id=599366273]
-libraries/ = SubResource("AnimationLibrary_ne2mo")
 autoplay = &"up_down"
 
-[node name="DeathBlock3" parent="." unique_id=507223721 instance=ExtResource("4_eqxsl")]
-position = Vector2(464, 417)
+[node name="DeathBlock2#AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=599366273]
+libraries/ = SubResource("AnimationLibrary_ne2mo")
+autoplay = &"uo_down_2"
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="DeathBlock3" unique_id=1145664727]
+[node name="DeathBlock3#AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=1145664727]
 libraries/ = SubResource("AnimationLibrary_que50")
-autoplay = &"top_down"
+autoplay = &"top_down_#"
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="." unique_id=2093112588]
 position = Vector2(0, -2)
 stream = ExtResource("7_y0kc7")
 volume_db = -15.0
 autoplay = true
-parameters/looping = false
+parameters/looping = true
 
 [node name="MovingPlatform" type="AnimatableBody2D" parent="." unique_id=782929200]
-z_index = 10
+z_index = 11
 
 [node name="Sprite2D" type="Sprite2D" parent="MovingPlatform" unique_id=1488827219]
 z_index = -10
@@ -542,8 +363,10 @@ position = Vector2(819, 483.375)
 shape = SubResource("RectangleShape2D_6cvei")
 
 [node name="Portal" parent="." unique_id=1389205391 instance=ExtResource("9_6cvei")]
-position = Vector2(2472, 801)
+position = Vector2(3071, 572)
 next_level = "uid://bkhu8tgcin37g"
 
 [node name="CheckPoint" parent="." unique_id=1588304002 instance=ExtResource("12_172wr")]
-position = Vector2(1378, 802)
+position = Vector2(1591, 579)
+
+[node name="HUD" parent="." unique_id=837734418 instance=ExtResource("10_que50")]

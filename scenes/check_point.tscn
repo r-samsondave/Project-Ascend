@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dxsl4n8yimrgr"]
 
 [ext_resource type="Script" uid="uid://b6ew12sl5jvxf" path="res://scenes/check_point.gd" id="1_klegx"]
-[ext_resource type="Texture2D" uid="uid://ch54ftfva1daf" path="res://assets/object/flag animation.png" id="1_od5km"]
+[ext_resource type="Texture2D" uid="uid://ch54ftfva1daf" path="res://assets/object/Flag/flag animation.png" id="1_od5km"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_klegx"]
 atlas = ExtResource("1_od5km")

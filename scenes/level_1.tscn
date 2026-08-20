@@ -1,16 +1,17 @@
 [gd_scene format=4 uid="uid://dk5cpjotqwrdu"]
 
 [ext_resource type="AudioStream" uid="uid://glo2v5ojbdk3" path="res://assets/audio/level_1_background_music.mp3" id="1_e3sih"]
-[ext_resource type="PackedScene" uid="uid://b412y625djhmd" path="res://scenes/player.tscn" id="1_pa8r4"]
-[ext_resource type="Texture2D" uid="uid://603lqdlxox7o" path="res://assets/environment/Background/2310-w062-n005-286B-p15-286.jpg" id="2_15mv3"]
+[ext_resource type="Texture2D" path="res://assets/environment/Background/2310-w062-n005-286B-p15-286.jpg" id="2_15mv3"]
+[ext_resource type="PackedScene" uid="uid://b412y625djhmd" path="res://scenes/player.tscn" id="3_2os1m"]
 [ext_resource type="PackedScene" uid="uid://c0imvjefr8s3g" path="res://scenes/terrain.tscn" id="3_e3sih"]
-[ext_resource type="PackedScene" uid="uid://ct85qti2231d3" path="res://scenes/portal.tscn" id="4_2y5yt"]
-[ext_resource type="PackedScene" uid="uid://n6v0syrptw3i" path="res://scenes/level_intro.tscn" id="5_2os1m"]
 [ext_resource type="Texture2D" uid="uid://beust8j2kl1y4" path="res://assets/environment/cloud_pack.png" id="6_go7sj"]
 [ext_resource type="Texture2D" uid="uid://dvcg6ceyc7sk" path="res://assets/sign_level/level_1_signn.png" id="7_2y5yt"]
 [ext_resource type="Texture2D" uid="uid://bod25f6qmcjlw" path="res://assets/object/Arrow_sign/Pixelart arrow icon pack 1.0.png" id="7_7gny6"]
 [ext_resource type="PackedScene" uid="uid://dlbtqec6o5o17" path="res://scenes/moving_platform.tscn" id="8_15mv3"]
+[ext_resource type="PackedScene" uid="uid://n6v0syrptw3i" path="res://scenes/level_intro.tscn" id="8_go7sj"]
 [ext_resource type="Texture2D" uid="uid://5dudk8h1xoap" path="res://assets/environment/Platforms/platforms.png" id="11_2os1m"]
+[ext_resource type="PackedScene" uid="uid://cwbxhafopjghr" path="res://scenes/hud.tscn" id="11_go7sj"]
+[ext_resource type="PackedScene" uid="uid://ct85qti2231d3" path="res://scenes/portal.tscn" id="12_go7sj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1jhxy"]
 size = Vector2(819, 20)
@@ -72,21 +73,18 @@ position = Vector2(668.375, 265)
 scale = Vector2(0.34256664, 0.29355413)
 texture = ExtResource("2_15mv3")
 
-[node name="Background3" type="Sprite2D" parent="Background" unique_id=2108457287]
-z_index = -10
-position = Vector2(-382.63672, -2929.613)
-rotation = -3.1415925
-scale = Vector2(0.99999994, 1)
-texture = ExtResource("2_15mv3")
+[node name="Player" parent="." unique_id=114417943 instance=ExtResource("3_2os1m")]
+position = Vector2(-117, 174)
 
-[node name="Background2" type="Sprite2D" parent="Background/Background3" unique_id=1591239215]
-z_index = -10
-position = Vector2(-382.6372, -5862.633)
-scale = Vector2(1.0000001, 1)
-texture = ExtResource("2_15mv3")
-
-[node name="Player" parent="." unique_id=114417943 instance=ExtResource("1_pa8r4")]
-position = Vector2(-156, 108)
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=199897384]
+position = Vector2(6, -2)
+zoom = Vector2(2.7, 2.7)
+limit_left = -350
+limit_top = -150
+limit_right = 1900
+limit_bottom = 690
+position_smoothing_enabled = true
+position_smoothing_speed = 15.0
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="." unique_id=266053302]
 position = Vector2(176, 3)
@@ -101,10 +99,6 @@ position = Vector2(274, 299)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=386771338]
 position = Vector2(-476.5, 69)
 shape = SubResource("RectangleShape2D_1jhxy")
-
-[node name="Portal" parent="." unique_id=1389205391 instance=ExtResource("4_2y5yt")]
-position = Vector2(1310, -25)
-next_level = "uid://djk6o1c4q061o"
 
 [node name="barrier" type="StaticBody2D" parent="." unique_id=1810921038]
 position = Vector2(164, 2)
@@ -143,7 +137,7 @@ region_rect = Rect2(2.3128948, 32.004173, 10.726124, 16.144203)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=833050603]
 
-[node name="level_intro" parent="CanvasLayer" unique_id=537239394 instance=ExtResource("5_2os1m")]
+[node name="level_intro" parent="CanvasLayer" unique_id=537239394 instance=ExtResource("8_go7sj")]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -153,6 +147,7 @@ grow_horizontal = 2
 sign_texture = ExtResource("7_2y5yt")
 
 [node name="MovingPlatform" parent="." unique_id=1133293067 instance=ExtResource("8_15mv3")]
+z_index = 2
 position = Vector2(994, 350)
 
 [node name="Sprite2D" type="Sprite2D" parent="MovingPlatform" unique_id=633286255]
@@ -168,3 +163,9 @@ autoplay = &"move"
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="MovingPlatform" unique_id=205184355]
 position = Vector2(-10, -3)
 shape = SubResource("SegmentShape2D_1jhxy")
+
+[node name="HUD" parent="." unique_id=837734418 instance=ExtResource("11_go7sj")]
+
+[node name="Portal" parent="." unique_id=1389205391 instance=ExtResource("12_go7sj")]
+position = Vector2(1283, -34)
+next_level = "uid://djk6o1c4q061o"

@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://cwbxhafopjghr"]
+
+[ext_resource type="Texture2D" uid="uid://dq4ere8ayhxc2" path="res://assets/object/Heart/Heart/Heart.png" id="1_ahhtf"]
+[ext_resource type="Script" uid="uid://q4io37xf3pfq" path="res://scenes/hud.gd" id="1_oo0fn"]
+
+[node name="HUD" type="CanvasLayer" unique_id=837734418]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+script = ExtResource("1_oo0fn")
+
+[node name="Lives" type="HBoxContainer" parent="." unique_id=2047094315]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Heart5" type="Sprite2D" parent="Lives" unique_id=819259950]
+position = Vector2(120, 20)
+texture = ExtResource("1_ahhtf")
+region_enabled = true
+region_rect = Rect2(16.201717, 35.56861, 22.843754, 23.108269)
+
+[node name="Heart4" type="Sprite2D" parent="Lives" unique_id=3598039]
+position = Vector2(95, 20)
+texture = ExtResource("1_ahhtf")
+region_enabled = true
+region_rect = Rect2(16.201717, 35.56861, 22.843754, 23.108269)
+
+[node name="Heart3" type="Sprite2D" parent="Lives" unique_id=647814631]
+position = Vector2(70, 20)
+texture = ExtResource("1_ahhtf")
+region_enabled = true
+region_rect = Rect2(16.201717, 35.56861, 22.843754, 23.108269)
+
+[node name="Heart1" type="Sprite2D" parent="Lives" unique_id=1841775398]
+position = Vector2(20, 20)
+texture = ExtResource("1_ahhtf")
+region_enabled = true
+region_rect = Rect2(16.201717, 35.56861, 22.843754, 23.108269)
+
+[node name="Heart2" type="Sprite2D" parent="Lives" unique_id=418796322]
+position = Vector2(45, 20)
+texture = ExtResource("1_ahhtf")
+region_enabled = true
+region_rect = Rect2(16.201717, 35.56861, 22.843754, 23.108269)
+
+[node name="Heart6" type="Sprite2D" parent="Lives" unique_id=1326561397]
+position = Vector2(145, 20)
+texture = ExtResource("1_ahhtf")
+region_enabled = true
+region_rect = Rect2(16.201717, 35.56861, 22.843754, 23.108269)
+
+[node name="Heart7" type="Sprite2D" parent="Lives" unique_id=490226837]
+position = Vector2(170, 20)
+texture = ExtResource("1_ahhtf")
+region_enabled = true
+region_rect = Rect2(16.201717, 35.56861, 22.843754, 23.108269)
